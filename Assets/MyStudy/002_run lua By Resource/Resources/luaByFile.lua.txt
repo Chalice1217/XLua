@@ -1,0 +1,5 @@
+﻿print('我是一个luaByFile.lua.txt脚本 ,我是通过Resources.Load<TextAsset>()加载出来的!')
+
+a = 3
+b = 5 
+print('lua脚本里a*b的值为 :'.. a*b)

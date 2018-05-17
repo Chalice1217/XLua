@@ -1,0 +1,1 @@
+print("我是StreamingAssets文件夹下的lua文件,我不用必须在Resources文件夹下也可以被加载到!")
