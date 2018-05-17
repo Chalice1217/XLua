@@ -1,1 +1,19 @@
-print("调用Lua中的表")
+print("在你看到这行代码的时候,你就可以成功调用Lua里的table了!")
+
+ Person = { 
+ name = "guoShuai",age = 18 ,
+ Eat = function() 
+ print("guoShuai在吃饭!")
+ end ,
+ Sum =function(self,a,b) --self 指当前对象自身 , 不带这个参数会报错
+ print(a + b)
+ end 
+ 
+ 
+ }
+
+function Person:Sub(c,d) -- 用冒号 ":" , 就可以不用self这个参数
+
+ print(c-d)
+
+ end
