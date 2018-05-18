@@ -1,0 +1,25 @@
+print("如果你看到这行代码,我们就开始使用Lua调用C#中的静态属性和方法!")
+
+print("我们先创建一个物体 \"CreatedByLua\"")
+CS.UnityEngine.GameObject("CreatedByLua") --创建了一个名为CreatedByLua的空物体
+
+-- 如果要常用CS.UnityEngine.GameObject.Find("xxx") , 我们不用重复获取,这样比较消耗性能
+
+local gameObject = CS.UnityEngine.GameObject
+
+local cube =  gameObject.Find("Cube")
+cube.name = "ReNameCube"
+local sphere = gameObject.Find("Sphere")
+sphere.name = "ReNameSphere"
+  -- 调用成员方法的时候,要加冒号 ":" ,或者sphere.GetComponent(sphere,"MeshRenderer")
+  -- 调用静态方法时候,加点 "."
+local ss = sphere:GetComponent("MeshRenderer") --typeof(CS.UnityEngine.MeshRenderer)也可以
+
+function update()
+cube.transform:Rotate(CS.UnityEngine.Vector3.up * CS.UnityEngine.Time.deltaTime *60)
+ss.material.color = CS.UnityEngine.Color(CS.UnityEngine.Mathf.Sin(CS.UnityEngine.Time.time) / 2 + 0.5, 0,0, 1)
+end 
+
+
+print("-------------------------------------------------------------------")
+print("如果你看到这行代码,我们就开始使用Lua调用C#中的普通属性和方法!")

@@ -1,0 +1,27 @@
+print("在你看到这行代码的时候,你已经可以调用Lua里的全局Function了!")
+
+function Say()
+
+print("我是无参无返回值的lua函数")
+
+end
+
+function Sum(a,b)
+
+print("我是有一个返回值的lua函数,a + b 的值为" .. (a+b))
+return a+b
+
+end
+
+function MultiReturn(x,y)
+
+print("我是有多个返回值的lua函数")
+return x+y , x-y,x*y,x/y
+
+end
+
+function LuaFunc(t1,t2)
+
+print("我是使用LuaFunction调用的函数,也是多返回值")
+return t1 ,t2,t1*t2,t1+t2
+end

@@ -1,7 +1,7 @@
 print("在你看到这行代码的时候,你就可以成功调用Lua里的table了!")
 
  Person = { 
- name = "guoShuai",age = 18 ,
+ name = "guoShuai",age = 18 , 12,24,36,48,666,12.5,"字符串" ,false,
  Eat = function() 
  print("guoShuai在吃饭!")
  end ,
