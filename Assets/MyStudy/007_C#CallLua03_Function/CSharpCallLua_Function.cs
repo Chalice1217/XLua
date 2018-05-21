@@ -58,7 +58,7 @@ public class CSharpCallLua_Function : MonoBehaviour
     Action Say;
     private void NoArgNoReturn()
     {
-         Say = luaEnv.Global.Get<Action>("Say");
+         Say = luaEnv.Global.Get<Action>("Say");      
         if (Say != null)
         {
             Say();

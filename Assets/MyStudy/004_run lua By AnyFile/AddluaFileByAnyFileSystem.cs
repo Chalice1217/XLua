@@ -30,7 +30,7 @@ public class AddluaFileByAnyFileSystem : MonoBehaviour
         outPath = Application.streamingAssetsPath + "/" + "LuaFile";
         DirectoryInfo directoryInfo = new DirectoryInfo(outPath);
 
-        TraversingFileSystemInfo(fileName, directoryInfo);
+        TraversingFileSystemInfo(fileName, directoryInfo,ref Bytes);
         return Bytes;
     }
  
@@ -40,7 +40,7 @@ public class AddluaFileByAnyFileSystem : MonoBehaviour
     /// </summary>
     /// <param name="fileName"></param>
     /// <param name="fileSystemInfo"></param>
-    private void TraversingFileSystemInfo(string fileName,FileSystemInfo fileSystemInfo)
+    private void TraversingFileSystemInfo(string fileName,FileSystemInfo fileSystemInfo,ref byte[] Bytes)
     {
         
        DirectoryInfo directoryInfo =  fileSystemInfo as DirectoryInfo;
@@ -52,7 +52,7 @@ public class AddluaFileByAnyFileSystem : MonoBehaviour
 
             if (file == null)
             {
-                TraversingFileSystemInfo(fileName, item);
+                TraversingFileSystemInfo(fileName, item,ref Bytes);
             }
             else
             {               
